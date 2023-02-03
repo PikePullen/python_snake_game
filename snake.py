@@ -31,6 +31,15 @@ class Snake:
         new_segment.goto(position)
         self.segments.append(new_segment)
 
+    def reset(self):
+        # this is almost a garbage collection for items that exist that we dont want to see anymore
+        for seg in self.segments:
+            seg.goto(1000,1000)
+
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+
     def move(self):
         """ The tail moves first, so that you have the
         next position available to use for each subsequent block"""
