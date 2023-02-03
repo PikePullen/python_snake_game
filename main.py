@@ -10,7 +10,10 @@ screen.tracer(0)
 
 snake = Snake()
 
-"""this is declared out side the while loop for some reason"""
+"""this is declared out side the while loop for some reason
+Apparently this is one of the causes of errors 
+we shouldn't use while True"""
+# Event handlers
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down,"Down")
@@ -27,4 +30,4 @@ while game_is_on:
 
     snake.move()
 
-screen.exitonclick()
+# screen.exitonclick()
